@@ -64,7 +64,7 @@ int main(int argc, char* argv[]){
     semid = semget(KEY, 1, 0);
     int semcheck = semctl(semid, 0, IPC_RMID); //remove semaphore
     if (semcheck == -1) {
-      printf("Couldn't access semaphore: %s\n", strerror(errno));
+      printf("No story to remove\n");
       exit(1);
     }
     printf("Removed semaphore\n");

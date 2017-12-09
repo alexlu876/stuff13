@@ -13,8 +13,23 @@ int main() {
     printf("Initialize using ./control -c\n");
     exit(1);
   }
-  printf("wait... |\n");
-  //fflush(stdout);
+
+  // if (fork()) {
+  //   int status;
+  //   int wpid;
+  //   do {
+  //     wpid = waitpid(-1, &status, WNOHANG);
+  //   } while (wpid == 0);
+  // }
+  // else {
+  //   int err = semop(semid, &semtake, 1); //decrease semaphore before accessing resources
+  //   printf("%d\n", err);
+  //   printf("I finished\n");
+  //   exit(1);
+  // }
+
+  printf("loading... \n");
+
   semop(semid, &semtake, 1); //decrease semaphore before accessing resources
 
 //============================Accessing data========================================
